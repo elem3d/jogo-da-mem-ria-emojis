@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #090432;
+    user-select: none;
+
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(325deg, 
+    #070041 0%, #2f0c7b 40%, #5216c1 60%, #953af6 100%);
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 100%;
+    width: 500;
+    padding: 40px 50px;
+}
+
+.container>div {
+    background: linear-gradient(325deg, 
+    #411a6c 0%, #2f0c7b 40%, #2f0c7b 60%, #4f2081 100%);
+    border: 5px groove #250a6197;
+    border-radius: 50%;
+}
+
+h2{
+    font-size: 3em;
+    color: #000;
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(180deg, #ffbf00 0%, #fff200 0%, #ffffff 50%, #fff200 70%, #ffbf00 80%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.reset {
+    padding: 15px 20px;
+    width: 100%;
+    color: #000;
+    background-color: #fff;
+    border: 5px;
+    border-style: outset;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.reset:focus {
+    color: #ec38bc;
+    background-color: #160973;
+    border-style: inset;
+    border-color: #090432;
+}
+
+.game {
+    width: 460px;
+    height: 460px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    perspective: 500px;
+    perspective-origin: center 400px;
+    transform-style: preserve-3d;
+}
+
+.item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #00000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(217deg, #d80343b3, #fffdff 70%),
+              linear-gradient(127deg, #d80343b3, #ff6dff 70%),
+              linear-gradient(336deg, #d80343b3, #fd46c0 70%);
+  
+    font-size: 3em;
+    transform: rotateY(180deg);
+    transition: 0.5s;
+    transform-origin: center;
+    
+}
+
+.item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(255, 230, 38);
+    opacity: 50%;
+    border: 2px solid #ffbf00;
+    border-radius: 50%;
+    transition: 0.25s;
+    transform: rotateY(360deg);
+    backface-visibility: hidden;
+}
+
+.item.boxOpen {
+    transform: rotateY(0deg);
+}
+
+.boxOpen::after {
+    transform: rotateY(180deg);
+}
+.boxMatch::after {
+    transform: rotateY(180deg);
+}
