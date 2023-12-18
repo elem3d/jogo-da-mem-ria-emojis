@@ -96,7 +96,6 @@ h2{
     position: absolute;
     inset: 0;
     background: rgb(255, 230, 38);
-    opacity: 50%;
     border: 2px solid #ffbf00;
     border-radius: 50%;
     transition: 0.25s;
